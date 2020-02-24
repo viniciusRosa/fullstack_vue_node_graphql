@@ -58,14 +58,14 @@ import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.css";
 
 export default {
-  name: "app",
-  data: function () {
-    return {
-      prefixes: ['air', 'jet', 'fligth'],
-      sufixes: ['hub', 'station', 'mart'],
-      domains: ['airhub', 'jetstation', 'fligthmart']
-    }
-  }
+	name: "app",
+	data: function () {
+		return {
+			prefixes: ["air", "jet", "fligth"],
+			sufixes: ["hub", "station", "mart"],
+			domains: ["airhub", "jetstation", "fligthmart"]
+		};
+	}
 };
 </script>
 
