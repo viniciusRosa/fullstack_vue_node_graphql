@@ -93,9 +93,9 @@ export default {
 		return {
 			prefix: "",
 			sufix: "",
-			prefixes: ["air", "jet", "fligth"],
-			sufixes: ["hub", "station", "mart"],
-			domains: ["airhub", "jetstation", "fligthmart"]
+			prefixes: [],
+			sufixes: [],
+			domains: []
 		};
 	},
 	methods: {
