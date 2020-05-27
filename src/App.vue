@@ -20,7 +20,7 @@ export default {
 	name: "app",
 	components: {
 		DomainList
-	},
+	}
 };
 </script>
 
