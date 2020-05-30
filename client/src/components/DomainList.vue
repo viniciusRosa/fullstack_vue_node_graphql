@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 <template>
   <div>
     <div id="main">
@@ -50,6 +51,7 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.css";
 import AppItemList from "./AppItemList";
+import axios from "axios/dist/axios";
 
 export default {
 	name: "app",
@@ -58,8 +60,8 @@ export default {
 	},
 	data: function() {
 		return {
-			prefixes: ["asdsd"],
-			sufixes: ["asd"]
+			prefixes: [],
+			sufixes: []
 		};
 	},
 	methods: {
@@ -92,10 +94,31 @@ export default {
 			}
 			return domains;
 		}
+	},
+	created() {
+		axios({
+			url: "http://localhost:5000",
+			method: "post",
+			data: {
+				query: `
+        {
+          items (type: "prefix") {
+            id
+            type
+            description
+          }
+          
+        }
+      `
+			}
+		}).then(response => {
+			const query = response.data;
+			this.prefixes = query.data.prefixes.map(prefix => prefix.description);
+			this.sufixes = query.data.sufixes.map(sufix => sufix.description);
+			// eslint-disable-next-line no-console
+			console.log(response);
+		});
 	}
-	// created() {
-	//
-	// },
 };
 </script>
 
