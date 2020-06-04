@@ -9,7 +9,7 @@ const typeDefs = `
     }
 
     type Query {
-        items (type: string): [Item]
+        items (type: String): [Item]
     }
 
 `;

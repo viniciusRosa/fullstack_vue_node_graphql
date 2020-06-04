@@ -102,11 +102,14 @@ export default {
 			data: {
 				query: `
         {
-          items (type: "prefix") {
+          prefixes: items (type: "prefix") {
             id
             type
             description
-          }
+					},
+					sufixes: items (type: "sufix") {
+						description
+					}
           
         }
       `
